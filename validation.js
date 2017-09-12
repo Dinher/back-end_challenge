@@ -19,25 +19,11 @@ var invalidDiv = document.getElementById('invalidCustomers');
 function readCustomers() {
   // Table Header
   output.innerHTML += "<ul class='header'><li>id</li><li>name</li><li>email</li><li>age</li><li>Country</li><li>newsletter</li><li>Validation</li></ul>"
-  output.innerHTML += '<h2>Page 1</h2>';
-
-  // Iterates customers in each 'page'
-  for (var person in page1.customers) {
-    describePerson(page1.customers[person])
+  
+  // outputs details per customer
+  for (var each in customers){
+    describePerson(customers[each])
   }
-  output.innerHTML += '<h2>Page 2</h2>';
-  for (var person in page2.customers) {
-    describePerson(page2.customers[person])
-  }
-  output.innerHTML += '<h2>Page 3</h2>';
-  for (var person in page3.customers) {
-    describePerson(page3.customers[person])
-  }
-  output.innerHTML += '<h2>Page 4</h2>';
-  for (var person in page4.customers) {
-    describePerson(page4.customers[person])
-  }
-
   // Displays final json of invalid customers
   invalidDiv.innerHTML = JSON.stringify(invalidCustomers, null, 2);
 }
@@ -70,6 +56,7 @@ function describePerson(obj) {
     invalidCustomers.push(invalidCust);
     val = '<li>FAIL</li>'
   }
+  console.log('<ul>' + id + name + email + age + country + newsletter + val + '</ul>')
   output.innerHTML += '<ul>' + id + name + email + age + country + newsletter + val + '</ul>';
 }
 

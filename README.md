@@ -9,11 +9,10 @@ javascript and displayed in a browser.
 
 - Notes
 A python script, 'shopifyWebScript.py' was used to skim the API for the
-JSON data. I didn't use the script to read the data to decide itself to 
-keep going. In this, the script places the JSON inside of variables so it
-may be readily utilized in javascript calls. Preferably, the script would
-skim the JSON and only extract the customers from each page, adding it to a
-centralized list.
+JSON data. The script makes a first pass through the API to recieve the 
+pagination data. From there it will place the customers into an array of 
+objects which is then saved as a javascript file. This file contains the 
+JSON data as a variable so it is more readily accessible.
 
 The validation object within the JSON also implies that it should be used
 to validate the customers within that page exclusively. Looking through each
